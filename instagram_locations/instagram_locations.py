@@ -135,8 +135,8 @@ def get_insta_cookies():
     if not os.path.exists(data_profile):
         os.makedirs(data_profile)
 
-    options.add_argument(f"--user-data-dir={data_dir}")
-    options.add_argument(f"--profile-directory={data_profile}")
+    # options.add_argument(f"--user-data-dir={data_dir}")
+    # options.add_argument(f"--profile-directory={data_profile}")
     options.add_argument("start-maximized")
     options.add_argument("disable-infobars")
     options.add_argument("--disable-extensions")
