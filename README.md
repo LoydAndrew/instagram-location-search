@@ -1,8 +1,20 @@
 # Instagram Location Search
+Fork from bellingcat with bug fixes
 
 [![PyPI version](https://badge.fury.io/py/instagram-location-search.svg)](https://badge.fury.io/py/instagram-location-search)
 ## Installation
-This Python application can be installed from the repo:
+Create python virtual environment in your directory:
+```sh
+python -m venv venv
+```
+Then activate it: 
+```sh
+# On windows
+venv\Scripts\activate
+# On linux
+source venv/bin/activate
+```
+Then finally install with:
 `pip install git+https://github.com/LoydAndrew/instagram-location-search`
 
 
