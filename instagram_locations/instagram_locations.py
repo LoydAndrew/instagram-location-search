@@ -119,20 +119,29 @@ def get_insta_cookies():
     from selenium.webdriver.chrome.service import Service as ChromiumService
     from webdriver_manager.chrome import ChromeDriverManager
     from webdriver_manager.core.os_manager import ChromeType
+
+    import os
+    from os.path import expanduser
+    home = expanduser("~")
     """
     Attempts to run selenium, provide user with the login form and extract cookies from page to be used in program.
     Returns cookies formatted as name=value;name=value;...
      """
     options = webdriver.ChromeOptions()
-    options.add_argument(r"--user-data-dir=~/.instagram_location_searcher/data")
-    options.add_argument(r'--profile-directory=~/.instagram_location_searcher/profile')
+    data_dir = f'{home}/.instagram_location_searcher/data'
+    data_profile = f'{home}/.instagram_location_searcher/profile'
+    if not os.path.exists(data_dir):
+        os.makedirs(data_dir)
+    if not os.path.exists(data_profile):
+        os.makedirs(data_profile)
+
+    options.add_argument(f"--user-data-dir={data_dir}")
+    options.add_argument(f"--profile-directory={data_profile}")
     options.add_argument("start-maximized")
     options.add_argument("disable-infobars")
     options.add_argument("--disable-extensions")
     options.add_argument("--disable-dev-shm-usage")
-    options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
-
     driver = webdriver.Chrome(options=options, service=ChromiumService(ChromeDriverManager().install()))
     driver.get("https://www.instagram.com/")
     # Check that there is cookie with name sessionid (mean we logged in)
