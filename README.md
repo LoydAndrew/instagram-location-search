@@ -2,11 +2,10 @@
 
 [![PyPI version](https://badge.fury.io/py/instagram-location-search.svg)](https://badge.fury.io/py/instagram-location-search)
 ## Installation
-This Python application can be installed from [PyPI](https://pypi.org/project/instagram-location-search/) using pip:
-`pip install instagram-location-search`
+This Python application can be installed from 
 
 or the latest from the repo:
-`pip install git+https://github.com/bellingcat/instagram-location-search`
+`pip install git+https://github.com/LoydAndrew/instagram-location-search`
 
 ## Example usage
 
