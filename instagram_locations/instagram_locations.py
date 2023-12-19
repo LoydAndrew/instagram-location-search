@@ -126,7 +126,7 @@ def get_insta_cookies():
     options = webdriver.ChromeOptions()
     options.add_argument(r"--user-data-dir=~/.instagram_location_searcher/data")
     options.add_argument(r'--profile-directory=~/.instagram_location_searcher/profile')
-    driver = webdriver.Chrome(options=options, service=ChromiumService(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()))
+    driver = webdriver.Chrome(options=options, service=ChromiumService(ChromeDriverManager().install()))
     driver.get("https://www.instagram.com/")
     # Check that there is cookie with name sessionid (mean we logged in)
     cookies = driver.get_cookies()
